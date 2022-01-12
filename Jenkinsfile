@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -f hello-app/pom.xml -B -DskipTests clean package'
+                sh 
+            sh 'mvn clean package -Dmaven.test.skip=true' 
+            sh  "ls -al"
             }
             post {
                 success {
