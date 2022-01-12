@@ -2,9 +2,17 @@ pipeline {
     agent any
     tools{
         maven 'Maven' 
-        jdk 'JDK' 
+        jdk 'JDK 1.8.*' 
     }
+    
     stages {
+        stage('git checkout'){
+            steps{
+                git branch: 'master',
+                credentialsId: 'git_hub',
+                url: 'https://github.com/nalajala9/-jenkins-maven-project.git'
+            sh "ls -la"
+            }
         stage('Build') {
             steps {
                 sh 
