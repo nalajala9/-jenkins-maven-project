@@ -10,7 +10,6 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 
             sh 'mvn -f hello-app/pom.xml clean package -Dmaven.test.skip=true' 
             sh  "ls -al"
             }
