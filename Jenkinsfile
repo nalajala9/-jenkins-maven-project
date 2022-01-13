@@ -17,6 +17,7 @@ pipeline {
                 success {
                     echo "Now Archiving the Artifacts....."
                     archiveArtifacts artifacts: '**/*.jar'
+                    sh 'ls -al'
                 }
             }
         }
